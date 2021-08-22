@@ -29,7 +29,5 @@ def index():
 def video():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
-
-app.run(debug=True)
-# while(1):
-#     generate_frames()
+if __name__ == "__main__":
+    app.run(debug=True)
