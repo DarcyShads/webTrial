@@ -20,12 +20,12 @@ def gen_frames():
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
 
 
-@app.route("/")
+@app.route('/', methods=["GET", "POST"])
 def index():
     return render_template('index.html')
 
 
-@app.route('/video')
+@app.route('/video', methods=["GET", "POST"])
 def video():
     return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
 
